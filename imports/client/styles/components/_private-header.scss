@@ -1,0 +1,18 @@
+.private-header {
+    background: $header-bg;
+    color: $header-color;
+}
+
+.private-header__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $site-max-width;
+    padding: $space;
+    vertical-align: middle;
+}
+
+.private-header__title {
+    color: white;
+    margin: 0;
+}
