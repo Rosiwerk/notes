@@ -3,7 +3,7 @@ import React from "react";
 import PrivateHeader from "./PrivateHeader";
 import NoteList from "./NoteList";
 
-export default (props) => {
+const Dashboard = (props) => {
     return (
         <div>
             <PrivateHeader title="Dashboard"/>
@@ -13,3 +13,5 @@ export default (props) => {
         </div>
     )
 }
+
+export default Dashboard;
