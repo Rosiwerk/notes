@@ -3,6 +3,7 @@ import { Mongo } from "meteor/mongo";
 
 import SimpleSchema from "simpl-schema";
 import moment from "moment";
+import shortid from "shortid";
 
 export const Notes = new Mongo.Collection("notes");
 
@@ -19,6 +20,7 @@ Meteor.methods({
         }
 
         return Notes.insert({
+            _id: shortid.generate(),
             title: "",
             body: "",
             userId: this.userId,
