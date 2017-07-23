@@ -22,4 +22,4 @@ fourseven:scss
 accounts-password
 session
 practicalmeteor:mocha
-react-meteor-data@=0.2.9
+react-meteor-data@=0.2.12
