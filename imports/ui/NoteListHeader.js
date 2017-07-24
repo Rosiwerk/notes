@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 export const NoteListHeader = (props) => {
     return (
         <div>
-            NoteListHeader
             <button onClick={() => {
                 props.meteorCall("notes.insert", (err, res) => {
                     if (res) {
