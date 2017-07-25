@@ -1,10 +1,11 @@
 @import "./variables";
+@import "./mixins/media-queries";
 @import "./base";
 
 @import "./components/boxed-view";
 @import "./components/button";
 @import "./components/private-header";
-@import "./components/page-content";
 @import "./components/checkbox";
 @import "./components/item";
 @import "./components/editor";
+@import "./components/page-content";
