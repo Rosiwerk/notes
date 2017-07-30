@@ -38,10 +38,10 @@ Meteor.startup(() => {
     Session.set("isNavOpen", false);
 
     $("body").click(function(event) {
-        if (event.target.class === "page-content")
+        if (event.target.class === "page-content" || event.target.class === "private-header")
             return;
 
-        if($(event.target).closest(".page-content").length)
+        if($(event.target).closest(".page-content").length || $(event.target).closest(".private-header").length)
             return;
 
         Session.set("selectedNoteId", undefined);
