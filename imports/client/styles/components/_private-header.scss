@@ -4,6 +4,7 @@
 }
 
 .private-header__content {
+    align-items: center;
     display: flex;
     height: $header-height;
     justify-content: space-between;
@@ -15,5 +16,16 @@
 
 .private-header__title {
     color: white;
+    margin-bottom: 0;
     margin-left: $space;
+}
+
+.private-header__nav-toggle {
+    cursor: pointer;
+    height: 2.4rem;
+    width: 2.4rem;
+
+    @include desktop {
+        display: none;
+    }
 }
