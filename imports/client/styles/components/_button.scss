@@ -8,6 +8,11 @@
     margin-bottom: $space;
     padding: $input-spacing;
     text-transform: uppercase;
+    transition: all .3s ease;
+}
+
+.button:hover, .button:focus, .button:active {
+    background-color: $brand-hover;
 }
 
 .button--link {

@@ -57,11 +57,24 @@
     display: flex;
     flex-direction: column;
     padding: 0 $space $space $space;
+
+    &:hover, &:focus, &:active {
+        padding: calc($input-spacing + 0.4rem) calc($input-spacing + 0.4rem);
+    }
 }
+
+
 
 .item-list__search-text {
     font-size: 1.4rem;
     padding: 1rem;
+    transition: background-color .3s ease;
+
+    // &:hover, &:focus, &:active {
+    //     background-color: $light-grey;
+    //     border: 1px solid $dark-grey;
+    //     padding: 1.1rem;
+    // }
 }
 
 // Empty Item

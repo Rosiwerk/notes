@@ -48,7 +48,7 @@ export class Signup extends React.Component {
                         <button className="button">Create Account</button>
                     </form>
 
-                    <Link to="/">Have an account?</Link>
+                    <Link to="/" className="boxed-view__redirect">Have an account?</Link>
                 </div>
             </div>
         )

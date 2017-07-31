@@ -59,6 +59,12 @@ export class Editor extends React.Component {
         }
     };
     render() {
+        const modalClass = this.state.isOpen ?
+            "confirm-modal confirm-modal--isOpen" :
+            "confirm-modal";
+        const modalOverlayClass = this.state.isOpen ?
+            "confirm-modal__overlay confirm-modal__overlay--isOpen" :
+            "confirm-modal__overlay";
         if (this.props.note) {
             return (
                 <div className="editor">
@@ -81,12 +87,12 @@ export class Editor extends React.Component {
                         >Delete note</button> */}
                         <button className="button button-secondary" onClick={() => this.setState({isOpen: true})}>Delete Note</button>
                         <Modal
-                            isOpen={this.state.isOpen}
+                            isOpen={true}
                             contentLabel="Delete Note"
                             onAfterOpen={() => this.refs.yes_button.focus()}
                             onRequestClose={() => this.setState({isOpen: false})}
-                            className="confirm-modal"
-                            overlayClassName="confirm-modal__overlay"
+                            className={modalClass}
+                            overlayClassName={modalOverlayClass}
                             >
                             <p className="confirm-modal__text">Do you really want to remove that note?</p>
                             <div className="confirm-modal__buttons-div">
