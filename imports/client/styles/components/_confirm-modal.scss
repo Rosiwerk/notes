@@ -1,0 +1,31 @@
+.confirm-modal {
+    background-color: #ffffff;
+    padding: 2.4rem;
+    text-align: center;
+    width: 28rem;
+}
+
+.confirm-modal__overlay {
+    align-items: center;
+    background-color: fade-out($grey, 0.3);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    z-index: 2;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.confirm-modal__buttons-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-modal__text {
+    font-size: $large-font-size;
+}

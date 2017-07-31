@@ -38,13 +38,30 @@
     margin-bottom: 0.4rem;
 }
 
-.item--selected .item__title {
-    font-weight: bold;
+.item--selected {
+    background-color: $light-grey;
+    
+    .item__title {
+        font-weight: bold;
+    }
 }
 
 .item__subtitle {
     color: $dark-grey;
     margin: 0;
+}
+
+// Search
+
+.item-list__search {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $space $space $space;
+}
+
+.item-list__search-text {
+    font-size: 1.4rem;
+    padding: 1rem;
 }
 
 // Empty Item

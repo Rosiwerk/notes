@@ -5,7 +5,7 @@
     cursor: pointer;
     font-size: $base-font-size;
     line-height: 1.2;
-    margin-bottom: $space;
+    // margin-bottom: $space;
     padding: $input-spacing;
     text-transform: uppercase;
 }
@@ -36,4 +36,9 @@
     margin: 0;
     padding: .4rem .8rem;
     text-transform: none;
+}
+
+.button--modal {
+    flex-grow: 1;
+    margin: 0 1rem;
 }

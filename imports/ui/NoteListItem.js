@@ -8,7 +8,6 @@ import moment from "moment";
 
 export const NoteListItem = (props) => {
     const className = props.note.selected ? "item item--selected" : "item";
-
     return (
         <div className={className} onClick={() => {
             props.Session.set("selectedNoteId", props.note._id)

@@ -6,6 +6,7 @@ import React from "react";
 import { browserHistory } from "react-router";
 import PropTypes from "prop-types";
 
+import Modal from "react-modal";
 import { Notes } from "./../api/notes";
 
 export class Editor extends React.Component {
@@ -13,7 +14,8 @@ export class Editor extends React.Component {
         super(props);
         this.state = {
             title: "",
-            body: ""
+            body: "",
+            isOpen: false
         };
     };
     handleBodyChange(event) {
@@ -33,6 +35,7 @@ export class Editor extends React.Component {
     handleNoteRemoval() {
         this.props.call("notes.remove", this.props.note._id);
         this.props.browserHistory.replace("/dashboard");
+        this.setState({ isOpen: false });
 
         const lastNoteId = Notes.find({}, {
             sort: {
@@ -72,10 +75,30 @@ export class Editor extends React.Component {
                         onChange={this.handleBodyChange.bind(this)}
                     ></textarea>
                     <div>
-                        <button
+                        {/* <button
                             className="button button--secondary"
                             onClick={this.handleNoteRemoval.bind(this)}
-                        >Delete note</button>
+                        >Delete note</button> */}
+                        <button className="button button-secondary" onClick={() => this.setState({isOpen: true})}>Delete Note</button>
+                        <Modal
+                            isOpen={this.state.isOpen}
+                            contentLabel="Delete Note"
+                            onAfterOpen={() => this.refs.yes_button.focus()}
+                            onRequestClose={() => this.setState({isOpen: false})}
+                            className="confirm-modal"
+                            overlayClassName="confirm-modal__overlay"
+                            >
+                            <p className="confirm-modal__text">Do you really want to remove that note?</p>
+                            <div className="confirm-modal__buttons-div">
+                                <button
+                                    className="button button--modal"
+                                    onClick={this.handleNoteRemoval.bind(this)}
+                                    ref="yes_button">Yes</button>
+                                <button className="button button--modal" onClick={() => {
+                                    this.setState({ isOpen: false });
+                                }}>No</button>
+                            </div>
+                        </Modal>
                     </div>
                 </div>
             );
