@@ -20,7 +20,7 @@ const Dashboard = (props) => {
                 transform: "scale(1)"
             }}>
             <div className="dashboard">
-                <PrivateHeader title="Your Notes"/>
+                <PrivateHeader title="Notes"/>
                 <div className="page-content">
                     <div className="page-content__sidebar">
                         <NoteList/>
