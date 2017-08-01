@@ -2,8 +2,12 @@ import { Meteor } from "meteor/meteor";
 import { Tracker } from "meteor/tracker";
 import { Session } from "meteor/session";
 
+import React from "react";
 import ReactDOM from "react-dom";
 import { browserHistory } from "react-router";
+
+import Dashboard from "./../imports/ui/Dashboard";
+import LoadingScreen from "./../imports/ui/loading/LoadingScreen";
 
 import { Notes } from "./../imports/api/notes";
 import { routes, onAuthChange } from "./../imports/routes/routes";
@@ -55,5 +59,15 @@ Meteor.startup(() => {
         Session.set("selectedNoteId", undefined);
     });
 
-    ReactDOM.render(routes, document.getElementById("app"));
+    Tracker.autorun(() => {
+        // ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
+
+        if (Meteor.user() !== undefined) {
+            setTimeout(() => {
+                ReactDOM.render(routes, document.getElementById("app"));
+            }, 1500);
+        } else {
+            ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
+        }
+    });
 });
