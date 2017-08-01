@@ -34,7 +34,6 @@ export class Editor extends React.Component {
     };
     handleNoteRemoval() {
         this.props.call("notes.remove", this.props.note._id);
-        this.props.browserHistory.replace("/dashboard");
         this.setState({ isOpen: false });
 
         const lastNoteId = Notes.find({}, {
@@ -45,6 +44,8 @@ export class Editor extends React.Component {
 
         if (lastNoteId) {
             Session.set("selectedNoteId", lastNoteId);
+        } else {
+            this.props.browserHistory.replace("/dashboard");
         }
     };
     componentDidUpdate(prevProps, prevState) {
