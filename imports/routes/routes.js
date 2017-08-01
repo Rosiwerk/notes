@@ -6,6 +6,7 @@ import { Router, Route, browserHistory } from "react-router";
 
 import Signup from "./../ui/Signup";
 import Dashboard from "./../ui/Dashboard";
+import Dashboard1 from "./../ui/Dashboard1";
 import NotFound from "./../ui/NotFound";
 import Login from "./../ui/Login";
 
@@ -40,7 +41,7 @@ export let routes = (
             <Route path="/" component={Login} privacy="unauth"/>
             <Route path="/signup" component={Signup} privacy="unauth"/>
             <Route path="/dashboard" component={Dashboard} privacy="auth"/>
-            <Route path="/dashboard/:id" component={Dashboard} privacy="auth" onEnter={onEnterNotePage} onLeave={onLeaveNotePage}/>
+            <Route path="/dashboard/:id" component={Dashboard1} privacy="auth" onEnter={onEnterNotePage} onLeave={onLeaveNotePage}/>
             <Route path="*" component={NotFound}/>
         </Route>
     </Router>
