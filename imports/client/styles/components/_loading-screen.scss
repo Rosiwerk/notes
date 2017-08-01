@@ -1,9 +1,11 @@
 .loading-screen {
+    background-color: $brand-primary;
     flex-direction: column;
     text-align: center;
 }
 
 .loading-screen__text {
+    color: #fff;
 
     @include desktop {
         font-size: 3.6rem;
