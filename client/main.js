@@ -61,14 +61,14 @@ Meteor.startup(() => {
 
     Tracker.autorun(() => {
         // ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
-        ReactDOM.render(routes, document.getElementById("app"));
+        // ReactDOM.render(routes, document.getElementById("app"));
 
-        // if (Meteor.user() !== undefined) {
-        //     setTimeout(() => {
-        //         ReactDOM.render(routes, document.getElementById("app"));
-        //     }, 1500);
-        // } else {
-        //     ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
-        // }
+        if (Meteor.user() !== undefined) {
+            setTimeout(() => {
+                ReactDOM.render(routes, document.getElementById("app"));
+            }, 1500);
+        } else {
+            ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
+        }
     });
 });
