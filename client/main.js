@@ -66,7 +66,9 @@ Meteor.startup(() => {
         if (Meteor.user() !== undefined) {
             ReactDOM.render(routes, document.getElementById("app"));
         } else {
-            ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
+            setTimeout(() => {
+                ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
+            }, 150);
         }
     });
 });
