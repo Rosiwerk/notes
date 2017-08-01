@@ -63,12 +63,24 @@ Meteor.startup(() => {
         // ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
         // ReactDOM.render(routes, document.getElementById("app"));
 
-        if (Meteor.user() === undefined) {
-            setTimeout(() => {
-                ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
-            }, 200);
+        // if (Meteor.user() === undefined) {
+        //     ReactDOM.render(routes, document.getElementById("app"));
+        //     setTimeout(() => {
+        //         ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
+        //     }, 200);
+        // } else {
+        //     ReactDOM.render(routes, document.getElementById("app"));
+        // }
+
+        if (Meteor.user() !== undefined) {
+            if (!!Meteor.user.profile) {
+                browserHistory.push("dashboard");
+                ReactDOM.render(routes, document.getElementById("app"));
+            } else {
+                ReactDOM.render(routes, document.getElementById("app"));
+            }
         } else {
-            ReactDOM.render(routes, document.getElementById("app"));
+            ReactDOM.render(<LoadingScreen/>, document.getElementById("app"));
         }
     });
 });
